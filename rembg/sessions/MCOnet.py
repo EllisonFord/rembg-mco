@@ -1,5 +1,6 @@
 import os
 from typing import List
+from pathlib import Path
 
 import numpy as np
 import onnxruntime as ort
@@ -65,6 +66,10 @@ class MCOnetSession(BaseSession):
             str: The path to the local model file.
         """
         # Replace the following path with the path to your local .onnx model
+
+        # relative_path = Path('my/folder/file.txt')
+        # absolute_path = relative_path.resolve()
+
         local_model_path = "rembg/sessions/MCOnet.onnx"
         return local_model_path
 
