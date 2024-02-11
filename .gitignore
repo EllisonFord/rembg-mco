@@ -21,3 +21,4 @@ __pycache__/
 *.j*pg
 *.png
 *.cr2
+*.onnx
