@@ -18,3 +18,6 @@ __pycache__/
 .tox
 .cache
 .mypy_cache
+*.j*pg
+*.png
+*.cr2
