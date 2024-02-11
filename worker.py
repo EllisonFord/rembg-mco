@@ -25,6 +25,9 @@ def process_image(input_path, output_path, session):
         img = Image.open(input_path)
 
     output = remove(img, session=session)
+
+    output = output.crop(output.getbbox())  # Trim the empty space from removing the background
+
     output.save(output_path)
 
 
