@@ -51,3 +51,9 @@ from .u2netp import U2netpSession
 
 sessions_class.append(U2netpSession)
 sessions_names.append(U2netpSession.name())
+
+
+from .MCOnet import MCOnetSession
+
+sessions_class.append(MCOnetSession)
+sessions_names.append(MCOnetSession.name())
