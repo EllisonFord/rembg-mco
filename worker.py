@@ -26,9 +26,18 @@ def process_image(input_path, output_path, session):
 
     output = remove(img, session=session)
 
+    # Check if the output image has an alpha channel
+    if output.mode == 'RGBA':
+        # Get the alpha channel
+        alpha = output.getchannel('A')
+        # Process the alpha channel: set semi-transparent pixels (alpha < 128) to fully transparent (0)
+        processed_alpha = alpha.point(lambda p: 0 if p < 128 else 255)
+        # Update the image with the processed alpha channel
+        output.putalpha(processed_alpha)
+
     output = output.crop(output.getbbox())  # Trim the empty space from removing the background
 
-    output.save(output_path)
+    output.save(output_path, 'PNG', quality=100, optimize=True)
 
 
 def crawl_directory(input_directory, output_directory, session):
