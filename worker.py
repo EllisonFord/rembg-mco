@@ -42,7 +42,7 @@ def process_image(input_path, output_path, session):
 
 def crawl_directory(input_directory, output_directory, session):
     # List of image extensions to look for
-    extensions = ['*.png', '*.jpeg', '*.jpg', '*.cr2']
+    extensions = ['*.png', '*.jpeg', '*.jpg', '*.cr2', '*.tiff']
 
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
@@ -58,8 +58,8 @@ def crawl_directory(input_directory, output_directory, session):
 
 
 # Define your input and output directories
-input_directory = 'images_to_rembg/'
-output_directory = 'images_to_rembg/OUTPUT'
+input_directory = 'reprocess/'
+output_directory = 'reprocess/OUTPUT'
 
 model_name = "MCOnet"
 session = new_session(model_name)
