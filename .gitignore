@@ -18,7 +18,9 @@ __pycache__/
 .tox
 .cache
 .mypy_cache
-*.j*pg
+*.jpg
+*.jpeg
+*.tiff
 *.png
 *.cr2
 *.onnx
