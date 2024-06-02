@@ -58,10 +58,10 @@ def crawl_directory(input_directory, output_directory, session):
 
 
 # Define your input and output directories
-input_directory = 'reprocess/'
-output_directory = 'reprocess/OUTPUT'
+input_directory = 'Canon/'
+output_directory = 'Canon/u2net'
 
-model_name = "MCOnet"
+model_name = "u2net"  # MCOnet failing with new setup
 session = new_session(model_name)
 
 # Crawl the directory and process all images
